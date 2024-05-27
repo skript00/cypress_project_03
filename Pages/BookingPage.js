@@ -2,7 +2,7 @@
 
 class BookingPage {
 
-// Locators
+// LOCATORS
 
 getOneWayButton() {
   return cy.get('.radio').children().first()
@@ -21,7 +21,7 @@ getSpecificLabel(index) {
 }
 
 getDropdowns() {
-  return cy.get('.select')
+  return cy.get('.select select')
 }
 
 getSpecificDropdown(index) {
@@ -32,33 +32,36 @@ getBookButton() {
   return cy.get('.Button_c_button__TmkRS')
 }
 
-getDateInputs() {
+getDatePickers() {
   return cy.get('.react-datepicker__input-container > input')
 }
 
-getSpecificDateInput(index) {
-  return this.getDateInputs().eq(index)
+getSpecificDatePicker(index) {
+  return this.getDatePickers().eq(index)
 }
 
 
 
 
-// Methods
+// METHODS
 
+// clicks 'One way' radio button
 clickOneWayButton() {
-  this.getOneWayButton.click()
+  this.getOneWayButton().click()
 }
 
+// clcks 'Round trip' radio button
 clickRoundTripButton() {
-  this.getRoundTripButton.click()
+  this.getRoundTripButton().click()
 }
 
-// selectDropdowns() {
-//   this.getDropdowns().select()
-// }
+// clicks 'BOOK' submission button
+clickBook() {
+  this.getBookButton().click
+}
 
-selectSpecificDropdown(index) {
-  this.getSpecificDropdown().eq(index)
+selectSpecificDropdown(index, option) {
+  this.getSpecificDropdown(index).select(option)
 }
 
 
